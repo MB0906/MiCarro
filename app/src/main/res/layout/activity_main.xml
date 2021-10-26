@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:weightSum="3"
+    android:background="@drawable/fondo"
+    tools:context=".MainActivity">
+
+    <ImageButton
+        android:id="@+id/ver_lista"
+        android:layout_width="131dp"
+        android:layout_height="wrap_content"
+        android:layout_row="1"
+        android:layout_column="0"
+        android:layout_weight="1"
+        android:onClick="verLista"
+        android:src="@drawable/button_lista_de_compra" />
+
+    <ImageButton
+        android:id="@+id/ingresar_lista"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:onClick="agregarProducto"
+        android:src="@drawable/button_agregar_producto" />
+
+    <ImageButton
+        android:id="@+id/eliminar_lista"
+        android:layout_width="126dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:onClick="eliminarProducto"
+        android:src="@drawable/button_eliminar_comprados" />
+
+    <TextView
+        android:layout_width="125dp"
+        android:layout_height="144dp"
+        android:layout_row="0"
+        android:layout_column="0"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="3dp"
+        android:text="@string/TituloVerLista"
+        android:textColor="@color/black"
+        android:textStyle="italic" />
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_row="0"
+        android:layout_column="1"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/black"
+        android:textStyle="italic"
+        android:text="@string/TituloRegistrar"/>
+
+    <TextView
+        android:layout_width="110dp"
+        android:layout_height="150dp"
+        android:layout_row="0"
+        android:layout_column="2"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/black"
+        android:textStyle="italic"
+        android:text="@string/TituloBorrar" />
+
+
+
+</GridLayout>

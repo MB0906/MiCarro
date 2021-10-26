@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Mi Carro</string>
+    <string-array name="unidadDeMedida">
+        <item>Otro</item>
+        <item>Unidades</item>
+        <item>Kilos</item>
+        <item>Litros</item>
+        <item>Cajas</item>
+        <item>Paquetes</item>
+    </string-array>
+
+    <string name="AyudaNombre">Nombre del producto</string>
+    <string name="AyudaCantidad">Cantidad</string>
+    <string name="AyudaUnidad">Ingrese la nueva unidad de medida</string>
+    <string name="CheckBox">Acepto agregar una nueva unidad de medida</string>
+    <string name="RegistrarBtn">📝Registrar Producto📝</string>
+    <string name="TituloRegistrar">¡Ingrese el producto que le falta comprar!</string>
+    <string name="TituloBorrar">Si ya compraste unos productos y no quieres confundirte ¡Eliminalos! con un solo click</string>
+    <string name="TituloVerLista">Lista de productos que hay que ¡Comprar!.</string>
+    <string name="TituloDetalle">Detalles del producto seleccionado</string>
+    <string name="NombreDetalle">Nombre: </string>
+    <string name="UnidadDetalle">Cantidad: </string>
+    <string name="EstadoDetalle">Estado: </string>
+</resources>
