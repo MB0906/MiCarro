@@ -6,13 +6,14 @@ public class Producto {
     private String unidadmedida;
     private boolean estado;
     public static final boolean Agregado=true;
-/*
-    public static final Producto[] productos = {
-            new Producto("Bebida",2,"Litros"),
-            new Producto("Aceitunas",1,"Bolsas"),
-            new Producto("Papa Fritas",1,"Bolsas")
-    };
-*/
+
+    public Producto(String nombre, int cantidad, String unidadmedida, boolean estado) {
+        this.nombre = nombre;
+        this.cantidad = cantidad;
+        this.unidadmedida = unidadmedida;
+        this.estado = estado;
+    }
+
     public Producto(String nombre, int cantidad, String unidadmedida) {
         this.nombre = nombre;
         this.cantidad = cantidad;

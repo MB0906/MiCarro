@@ -9,12 +9,13 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import cl.inacap.micarro.modelo.ComprasDatabaseHelper;
 import cl.inacap.micarro.modelo.ListaDeCompras;
 import cl.inacap.micarro.modelo.Producto;
 
 public class AgregarProductoActivity extends AppCompatActivity {
-    private ListaDeCompras listaDeCompras=ListaDeCompras.getInstancia();
-
+    //private ListaDeCompras listaDeCompras=ListaDeCompras.getInstancia();
+    private ComprasDatabaseHelper helper = new ComprasDatabaseHelper(this);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,7 +46,8 @@ public class AgregarProductoActivity extends AppCompatActivity {
                         if(acepto.isChecked()){
                             unidad=unidadNueva;
                             Producto producto=new Producto(nombre,cantidad,unidad);
-                            listaDeCompras.agregarProducto(producto);
+                            helper.ingresarProducto(producto);
+                            //listaDeCompras.agregarProducto(producto);
                             finish();
                             Toast.makeText(this,"Tu producto se agrego exitosamente✔",Toast.LENGTH_SHORT).show();
                         }else{
@@ -54,7 +56,8 @@ public class AgregarProductoActivity extends AppCompatActivity {
                     }
                 }else{
                     Producto producto=new Producto(nombre,cantidad,unidad);
-                    listaDeCompras.agregarProducto(producto);
+                    helper.ingresarProducto(producto);
+                    //listaDeCompras.agregarProducto(producto);
                     finish();
                     Toast.makeText(this,"Tu producto se agrego exitosamente✔",Toast.LENGTH_SHORT).show();
                 }

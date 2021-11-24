@@ -10,12 +10,14 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+import cl.inacap.micarro.modelo.ComprasDatabaseHelper;
 import cl.inacap.micarro.modelo.ListaDeCompras;
 import cl.inacap.micarro.modelo.Producto;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ListaDeCompras lista=ListaDeCompras.getInstancia();
+    //private ListaDeCompras lista=ListaDeCompras.getInstancia();
+    private ComprasDatabaseHelper helper= new ComprasDatabaseHelper(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,15 +25,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
     public void verLista(View view){
-        ArrayList<Producto> productos=lista.getListaDeCompras();
-        if(productos.size()>0){
+        try {
+            ArrayList<Producto> productos = (ArrayList<Producto>) helper.listaProductos();
             Intent intent=new Intent(this,ListaProductoActivity.class);
             startActivity(intent);
-        }else{
+        }catch(Exception ex){
             Toast.makeText(this,"¡Tu lista de compra esta vacia!", Toast.LENGTH_SHORT).show();
             Toast.makeText(this,"¡Empieza agregando un producto!", Toast.LENGTH_SHORT).show();
         }
-
     }
     public void agregarProducto(View view){
         Intent intent=new Intent(this,AgregarProductoActivity.class);
@@ -39,8 +40,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void eliminarProducto(View view){
-        lista.eliminarProducto();
-        Toast.makeText(this,"Todos los productos comprados han sido eliminado exitosamente", Toast.LENGTH_SHORT).show();
+        String msg=helper.eliminarComprados();
+        Toast.makeText(this,msg, Toast.LENGTH_SHORT).show();
     }
 
 
